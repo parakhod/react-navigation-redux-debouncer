@@ -1,0 +1,31 @@
+{
+  "name": "react-navigation-redux-debouncer",
+  "version": "0.0.1",
+  "description": "Debounce middleware for the react-navigation redux actions",
+  "main": "dist/index.js",
+  "scripts": {
+    "compile": "babel --stage 0 lib/ --out-dir dist/",
+    "demo": "node example"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/parakhod/react-navigation-redux-debouncer.git"
+  },
+  "keywords": [
+    "redux",
+    "react-navigation",
+    "middleware",
+    "debounce"
+  ],
+  "author": "Andrey Korinskiy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/parakhod/react-navigation-redux-debouncer/issues"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1"
+  },
+  "homepage": "https://github.com/parakhod/react-navigation-redux-debouncer#readme"
+}
