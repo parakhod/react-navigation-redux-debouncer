@@ -1,6 +1,6 @@
 {
   "name": "react-navigation-redux-debouncer",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Debounce middleware for the react-navigation redux actions",
   "main": "dist/index.js",
   "scripts": {
@@ -27,5 +27,6 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1"
   },
-  "homepage": "https://github.com/parakhod/react-navigation-redux-debouncer#readme"
+  "homepage": "https://github.com/parakhod/react-navigation-redux-debouncer#readme",
+  "dependencies": {}
 }

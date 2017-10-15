@@ -4,6 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var navLocked = false;
+var lastActionType = null;
 
 var navigationDebouncer = function navigationDebouncer() {
   var interval = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 600;
@@ -11,13 +12,16 @@ var navigationDebouncer = function navigationDebouncer() {
     return function (next) {
       return function (action) {
         if (action.type.split('/')[0] === 'Navigation') {
-          if (navLocked) {
-            return;
-          } else {
-            setTimeout(function () {
-              return navLocked = false;
-            }, interval);
-            navLocked = true;
+          if (action.type !== 'Navigation/SET_PARAMS') {
+            if (navLocked && action.type === lastActionType) {
+              return;
+            } else {
+              setTimeout(function () {
+                return navLocked = false;
+              }, interval);
+              navLocked = true;
+              lastActionType = action.type;
+            }
           }
         };
         next(action);
