@@ -11,7 +11,7 @@ var navigationDebouncer = function navigationDebouncer() {
   return function () {
     return function (next) {
       return function (action) {
-        if (action.type.split('/')[0] === 'Navigation') {
+        if (action.type && action.type.split('/')[0] === 'Navigation') {
           if (action.type !== 'Navigation/SET_PARAMS') {
             if (navLocked && action.type === lastActionType) {
               return;
