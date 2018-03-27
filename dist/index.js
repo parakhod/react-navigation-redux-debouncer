@@ -12,18 +12,20 @@ var navigationDebouncer = function navigationDebouncer() {
     return function (next) {
       return function (action) {
         if (action.type.split('/')[0] === 'Navigation') {
-          if (action.type !== 'Navigation/SET_PARAMS') {
+          if (action.type !== 'Navigation/SET_PARAMS' &&
+            action.routeName !== 'DrawerToggle' &&
+            action.routeName !== 'DrawerOpen' &&
+            action.routeName !== 'DrawerClose') {
             if (navLocked && action.type === lastActionType) {
               return;
-            } else {
-              setTimeout(function () {
-                return navLocked = false;
-              }, interval);
-              navLocked = true;
-              lastActionType = action.type;
             }
+            setTimeout(function () {
+              return navLocked = false;
+            }, interval);
+            navLocked = true;
+            lastActionType = action.type;
           }
-        };
+        }
         next(action);
       };
     };
